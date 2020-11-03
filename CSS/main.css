@@ -1,0 +1,66 @@
+.textArea {
+  position: relative;
+  display: block;
+   width: 1060px;
+  height: 50vh;
+  margin: auto;
+  border: 2px solid rgb(194, 87, 45);
+  font-size: 30pt;
+}
+
+.textArea:focus {
+  outline: none !important;
+  border: 2px solid rgb(194, 87, 45);
+}
+
+.keyboard {
+  width: 1240px;
+  height: 40vh;
+  border: 2px solid white;
+  position: relative;
+  margin: auto;
+  padding: 4px;
+}
+
+.keyboardKeys {
+  text-align: center;
+}
+
+.keyboardKey {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: top;
+  position: relative;
+  width: 54px;
+  height: 6.5vh;
+  font-size: 20pt;
+  border: none;
+  outline: none;
+  background-color: rgb(192, 120, 120);
+  border-radius: 16px;
+  color: #fff;
+  transition: all 0.5s;
+  margin: 5px;
+}
+
+.keyboardKey:hover {
+  cursor: pointer;
+  background: #ff5c2ab4;
+}
+
+.keyboardKey:active, .active {
+  background-color: rgb(83, 34, 14);
+  transition: 0.25s;
+}
+
+.keyboardKey-Func, .Capslock {
+  width: 215px;
+}
+
+.KeyboardKey-Space {
+  width: 600px;
+}
+.CapslockActive {
+  background:darkred ;
+}

@@ -1,0 +1,15 @@
+{
+  "extends": ["airbnb-base"],
+  "env": {"browser": true, "node": true},
+  "rules": {
+    "no-global-assign": ["error", {"exceptions": ["Object"]}],
+    "props": 0,
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "no-use-before-define": ["error", { "functions": false, "variables": false, "classes": true }],
+    "operator-linebreak": [2, "after", { "overrides": { "||": "after" } }],
+    "max-len": ["error", { "code": 120 }],
+    "no-undef": ["error", { "typeof": true }],
+    "no-param-reassign": ["error", { "props": false }],
+    "consistent-return": 0
+  }
+}
