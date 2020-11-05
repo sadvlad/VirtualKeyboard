@@ -1,5 +1,9 @@
 {
-  "extends": ["airbnb-base"],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "extends": ["airbnb-base/legacy"],
   "env": {"browser": true, "node": true},
   "rules": {
     "no-global-assign": ["error", {"exceptions": ["Object"]}],
@@ -8,8 +12,9 @@
     "no-use-before-define": ["error", { "functions": false, "variables": false, "classes": true }],
     "operator-linebreak": [2, "after", { "overrides": { "||": "after" } }],
     "max-len": ["error", { "code": 120 }],
-    "no-undef": ["error", { "typeof": true }],
+    "no-undef": ["warn", { "typeof": true }],
     "no-param-reassign": ["error", { "props": false }],
-    "consistent-return": 0
+    "consistent-return": 0,
+    "no-unused-vars":"warn"
   }
 }

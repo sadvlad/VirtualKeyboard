@@ -1,4 +1,14 @@
+import './main.css';
+
 import { eventCode, rusKey, engKey } from './modules/KeysAndCode.js';
+
+import {
+  click, keyDown, keyUp, capsLock, setCaretPosition
+} from './modules/keysEvents.js';
+
+import {
+  loadLang, changeLanguage, changeToRus, changeToEng
+} from './modules/language.js';
 
 const inputKey = [];
 const pressedKey = [];
@@ -39,7 +49,7 @@ function init() {
   document.body.append(textArea);
   document.body.append(keyboard);
 }
-
+/*
 function setCaretPosition(pos) {
   if (textArea.setSelectionRange) {
     textArea.focus();
@@ -228,7 +238,7 @@ function changeToEng() {
   });
   pressedKey.length = 0;
 }
-
+*/
 window.addEventListener('load', () => {
   init();
   keyDown();

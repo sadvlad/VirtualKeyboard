@@ -1,25 +1,40 @@
-module.exports = {};
+// let config = require('./webpack.config')
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 module.exports = {
-  entry: './index.js',
-  module: {
-    rules: [
-      { test: /\.css$/, use: ['style-loader', 'css-loader'] },
-      { test: /\.(js)$/, use: 'babel-loader' },
-    ],
-  },
-  eslint: {
-    configFile: './.eslintrc',
-    emitWarning: true,
-  },
+  entry: { main: './index.js' },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'index_bundle.js',
+    filename: 'index.js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: [/node_modules/, /dist/],
+        use: {
+          loader: 'babel-loader'
+        }
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      }
+    ]
   },
   plugins: [
-    new HtmlWebpackPlugin(),
-  ],
-  mode: 'production',
+    new CleanWebpackPlugin({
+      cleanAfterEveryBuildPatterns: ['dist']
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: './index.html',
+      filename: 'index.html'
+    }),
+    new ESLintPlugin({
+      extensions: ['js']
+    })
+  ]
 };
