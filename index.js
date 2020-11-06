@@ -3,13 +3,17 @@ import './main.css';
 import { eventCode, rusKey, engKey } from './modules/KeysAndCode.js';
 
 import {
+  inputKey, pressedKey, isCapsLock, isRu, textArea, init
+} from './modules/addKeys.js';
+
+import {
   click, keyDown, keyUp, capsLock, setCaretPosition
 } from './modules/keysEvents.js';
 
 import {
   loadLang, changeLanguage, changeToRus, changeToEng
 } from './modules/language.js';
-
+/*
 const inputKey = [];
 const pressedKey = [];
 let isRu = true;
@@ -49,7 +53,7 @@ function init() {
   document.body.append(textArea);
   document.body.append(keyboard);
 }
-/*
+
 function setCaretPosition(pos) {
   if (textArea.setSelectionRange) {
     textArea.focus();
