@@ -1,3 +1,10 @@
+import { rusKey, engKey } from './KeysAndCode.js';
+import { pressedKey } from '../index.js';
+import {
+  isCapsLock, capsLock
+} from './keysEvents.js';
+
+let isRu = true;
 export function loadLang() {
   if (localStorage.getItem('isRu') === 'true') {
     changeToRus();
@@ -11,10 +18,16 @@ export function changeLanguage() {
     isRu = true;
     localStorage.setItem('isRu', isRu);
     changeToRus();
+    if (isCapsLock) {
+      capsLock();
+    }
   } else {
     isRu = false;
     localStorage.setItem('isRu', isRu);
     changeToEng();
+    if (isCapsLock) {
+      capsLock();
+    }
   }
 }
 

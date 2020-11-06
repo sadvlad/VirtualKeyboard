@@ -1,3 +1,10 @@
+import {
+  textArea, pressedKey, inputKey
+} from '../index.js';
+import { changeLanguage } from './language.js';
+
+export let isCapsLock = false;
+
 export function setCaretPosition(pos) {
   if (textArea.setSelectionRange) {
     textArea.focus();
