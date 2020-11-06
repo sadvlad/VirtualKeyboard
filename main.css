@@ -6,6 +6,7 @@
   margin: auto;
   border: 2px solid rgb(194, 87, 45);
   font-size: 30pt;
+  resize: none;
 }
 
 .textArea:focus {
